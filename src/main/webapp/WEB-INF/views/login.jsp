@@ -30,19 +30,19 @@
 							
 							<c:if test="${param.error != null}">
 								<div class="alert alert-danger">
-									<p>Invalid username and password.</p>
+									<p><spring:message code="error.invalid.user.password" /></p>
 								</div>
 							</c:if>
 							
 							<c:if test="${param.logout != null}">
 								<div class="alert alert-success">
-									<p>You have been logged out sucessfully.</p>
+									<p><spring:message code="success.logout" /></p>
 								</div>
 							</c:if>
 							
 							<c:if test="${param.accessDenied != null}">
 								<div class="alert alert-danger">
-									<p>Access Denied: You are not authorised!</p>
+									<p><spring:message code="error.not.authorized" /></p>
 								</div>
 							</c:if>
 							

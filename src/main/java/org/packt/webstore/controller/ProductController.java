@@ -5,11 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.packt.webstore.domain.Product;
 import org.packt.webstore.exception.NoProductsFoundUnderCategoryException;
 import org.packt.webstore.exception.ProductNotFoundException;
 import org.packt.webstore.service.ProductService;
+import org.packt.webstore.validator.ProductValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,8 +37,14 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
+	@Autowired
+	private ProductValidator productValidator;
+	
 	@InitBinder
 	public void initialiseBinder(WebDataBinder binder) {
+		
+		binder.setValidator(productValidator);
+		
 		binder.setAllowedFields("productId",
 				"name",
 				"unitPrice",
@@ -48,6 +56,7 @@ public class ProductController {
 				"productImage",
 				"productPdf",
 				"language");
+
 	}
 	
 	@GetMapping("/products")
@@ -108,8 +117,12 @@ public class ProductController {
 	}
 	
 	@PostMapping("/products/add")
-	public String processAddNewProductForm(@ModelAttribute("newProduct") Product newProduct,
+	public String processAddNewProductForm(@ModelAttribute("newProduct") @Valid Product newProduct,
 			BindingResult result, HttpServletRequest request) {
+		
+		if(result.hasErrors()) {
+			return "addProduct";
+		}
 		
 		String[] suppressedFields = result.getSuppressedFields();
 		if(suppressedFields.length > 0) {
