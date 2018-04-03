@@ -6,13 +6,14 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-	<title>Products</title>
+	
+	<title><spring:message code="addProduct.title.label" /></title>
 </head>
 <body>
 	<section>
 		<div class="pull-right" style="padding-right: 50px">
 			<a href="?language=en">English</a> | <a href="?language=nl">Dutch</a>
-			<a href="<c:url value='/logout' />">Logout</a>
+			<a href="<c:url value='/logout' />"><spring:message code="addProduct.logout.label" /></a>
 		</div>
 	</section>
 	

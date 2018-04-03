@@ -135,6 +135,10 @@ public class InMemoryCartRepository implements CartRepository {
 		if(cart.getItemByProductId(productId) == null) {
 			SQL = "INSERT INTO CART_ITEM (ID, PRODUCT_ID, CART_ID, QUANTITY) "
 					+ "VALUES (:id, :productId, :cartId, :quantity)";
+			
+			cartItemsParams.put("id", cartId+productId);
+	        cartItemsParams.put("quantity", 1);
+		
 		} else {
 			SQL = "UPDATE CART_ITEM SET QUANTITY = :quantity WHERE CART_ID = :cartId "
 					+ "AND PRODUCT_ID = :productId";
@@ -146,6 +150,7 @@ public class InMemoryCartRepository implements CartRepository {
 		
 		cartItemsParams.put("productId", productId);
 		cartItemsParams.put("cartId", cartId);
+		
 		this.jdbcTemplate.update(SQL, cartItemsParams);
 	
 	}
