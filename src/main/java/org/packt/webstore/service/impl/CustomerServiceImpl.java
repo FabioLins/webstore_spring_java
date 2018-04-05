@@ -1,7 +1,5 @@
 package org.packt.webstore.service.impl;
 
-import java.util.List;
-
 import org.packt.webstore.domain.Customer;
 import org.packt.webstore.repository.CustomerRepository;
 import org.packt.webstore.service.CustomerService;
@@ -15,13 +13,18 @@ public class CustomerServiceImpl implements CustomerService {
 	private CustomerRepository customerRepository;
 
 	@Override
-	public List<Customer> getAllCustomers() {
-		return this.customerRepository.getAllCustomers();
+	public Long saveCustomer(Customer customer) {
+		return this.customerRepository.saveCustomer(customer);
 	}
 
 	@Override
-	public void addCustomer(Customer customer) {
-		this.customerRepository.addCustomer(customer);
+	public Customer getCustomer(String customerId) {
+		return this.customerRepository.getCustomer(customerId);
+	}
+
+	@Override
+	public Boolean isCustomerExist(String customerId) {
+		return this.customerRepository.isCustomerExist(customerId);
 	}
 
 }

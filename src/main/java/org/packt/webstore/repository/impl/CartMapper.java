@@ -21,8 +21,6 @@ public class CartMapper implements RowMapper<Cart> {
 		this.cartItemMapper = new CartItemMapper(productService);
 	}
 
-
-
 	@Override
 	public Cart mapRow(ResultSet rs, int rowNum) throws SQLException {
 		

@@ -1,13 +1,13 @@
 package org.packt.webstore.repository;
 
-import java.util.List;
-
 import org.packt.webstore.domain.Customer;
 
 public interface CustomerRepository {
 
-	List<Customer> getAllCustomers();
+	Long saveCustomer(Customer customer);
 	
-	void addCustomer(Customer customer);
+	Customer getCustomer(String customerId);
+	
+	Boolean isCustomerExist(String customerId);
 	
 }

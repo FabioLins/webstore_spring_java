@@ -2,6 +2,7 @@ package org.packt.webstore.service.impl;
 
 import org.packt.webstore.domain.Cart;
 import org.packt.webstore.dto.CartDto;
+import org.packt.webstore.exception.InvalidCartException;
 import org.packt.webstore.repository.CartRepository;
 import org.packt.webstore.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,25 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public void removeItem(String cartId, String productId) {
 		this.cartRepository.removeItem(cartId, productId);
+	}
+
+	@Override
+	public Cart validate(String cartId) {
+		
+		Cart cart = this.cartRepository.read(cartId);
+		if(cart == null || cart.getCartItems().size() == 0) {
+			throw new InvalidCartException(cartId);
+		}
+		
+		return cart;
+		
+	}
+
+	@Override
+	public void clearCart(String cartId) {
+
+		this.cartRepository.clearCart(cartId);
+		
 	}
 
 }

@@ -9,7 +9,7 @@ import javax.validation.Valid;
 
 import org.packt.webstore.domain.Product;
 import org.packt.webstore.exception.NoProductsFoundUnderCategoryException;
-import org.packt.webstore.exception.ProductNotFoundException;
+import org.packt.webstore.exception.AddressNotFoundException;
 import org.packt.webstore.service.ProductService;
 import org.packt.webstore.validator.ProductValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -160,8 +160,8 @@ public class ProductController {
 		return "invalidPromoCode";
 	}
 	
-	@ExceptionHandler(ProductNotFoundException.class)
-	public ModelAndView handleError(HttpServletRequest req, ProductNotFoundException exception) {
+	@ExceptionHandler(AddressNotFoundException.class)
+	public ModelAndView handleError(HttpServletRequest req, AddressNotFoundException exception) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("invalidProductId", exception.getProductId());
 		mav.addObject("exception", exception);

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.packt.webstore.domain.Product;
-import org.packt.webstore.exception.ProductNotFoundException;
+import org.packt.webstore.exception.AddressNotFoundException;
 import org.packt.webstore.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -85,7 +85,7 @@ public class InMemoryProductRepository implements ProductRepository {
 		try {
 			return this.jdbcTemplate.queryForObject(SQL, params, new ProductMapper());
 		} catch(DataAccessException e) {
-			throw new ProductNotFoundException(productID);
+			throw new AddressNotFoundException(productID);
 		}
 	}
 

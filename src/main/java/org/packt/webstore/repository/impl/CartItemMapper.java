@@ -14,7 +14,7 @@ public class CartItemMapper implements RowMapper<CartItem> {
 	public CartItemMapper(ProductService productService) {
 		this.productService = productService;
 	}
-
+	
 	@Override
 	public CartItem mapRow(ResultSet rs, int rowNum) throws SQLException {
 		
@@ -23,6 +23,7 @@ public class CartItemMapper implements RowMapper<CartItem> {
 		cartItem.setQuantity(rs.getInt("QUANTITY"));
 		
 		return cartItem;
+		
 	}
 
 }

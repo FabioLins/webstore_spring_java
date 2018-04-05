@@ -11,7 +11,7 @@ Nexus 7 is the lightest 7 inch tablet With a quad-core Qualcomm
 Snapdragon™ S4 Pro processor',
  300,'Google','Tablet','New',1000,0,false);
  
- INSERT INTO CUSTOMERS VALUES ('C1234', 'Fábio Pacheco', 'Endereço 1', 10);
- INSERT INTO CUSTOMERS VALUES ('C1235', 'Maria Madalena', 'Endereço 2', 20);
- INSERT INTO CUSTOMERS VALUES ('C1236', 'Pedro Gusmao', 'Endereço 3', 30);
+ --INSERT INTO CUSTOMERS VALUES ('C1234', 'Fábio Pacheco', 'Endereço 1', 10);
+ --INSERT INTO CUSTOMERS VALUES ('C1235', 'Maria Madalena', 'Endereço 2', 20);
+ --INSERT INTO CUSTOMERS VALUES ('C1236', 'Pedro Gusmao', 'Endereço 3', 30);
  
