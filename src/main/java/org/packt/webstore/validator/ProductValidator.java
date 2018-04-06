@@ -7,11 +7,9 @@ import javax.validation.ConstraintViolation;
 
 import org.packt.webstore.domain.Product;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-@Component
 public class ProductValidator implements Validator {
 	
 	@Autowired

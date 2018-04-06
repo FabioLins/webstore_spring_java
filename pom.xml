@@ -66,7 +66,7 @@
   	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-oxm</artifactId>
-  		<version>5.0.4.RELEASE</version>
+  		<version>5.0.5.RELEASE</version>
   	</dependency>
   	<dependency>
   		<groupId>org.codehaus.jackson</groupId>
@@ -86,12 +86,12 @@
   	<dependency>
   		<groupId>org.springframework.security</groupId>
   		<artifactId>spring-security-config</artifactId>
-  		<version>5.0.3.RELEASE</version>
+  		<version>5.0.4.RELEASE</version>
   	</dependency>
   	<dependency>
   		<groupId>org.springframework.security</groupId>
   		<artifactId>spring-security-web</artifactId>
-  		<version>5.0.3.RELEASE</version>
+  		<version>5.0.4.RELEASE</version>
   	</dependency>
   	<dependency>
   		<groupId>org.hibernate.validator</groupId>
@@ -102,6 +102,41 @@
   		<groupId>org.springframework.webflow</groupId>
   		<artifactId>spring-webflow</artifactId>
   		<version>2.5.0.RELEASE</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.tiles</groupId>
+  		<artifactId>tiles-extras</artifactId>
+  		<version>3.0.8</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.12</version>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-test</artifactId>
+  		<version>5.0.5.RELEASE</version>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>javax.servlet</groupId>
+  		<artifactId>jsp-api</artifactId>
+  		<version>2.0</version>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.glassfish</groupId>
+  		<artifactId>javax.el</artifactId>
+  		<version>3.0.0</version>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.jayway.jsonpath</groupId>
+  		<artifactId>json-path-assert</artifactId>
+  		<version>2.4.0</version>
+  		<scope>test</scope>
   	</dependency>
   </dependencies>
 </project>

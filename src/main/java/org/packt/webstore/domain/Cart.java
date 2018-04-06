@@ -2,6 +2,7 @@ package org.packt.webstore.domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
@@ -17,6 +18,7 @@ public class Cart implements Serializable {
 
 	public Cart(String id) {
 		this.id = id;
+		this.cartItems = new ArrayList<CartItem>();
 	}
 
 	public String getId() {

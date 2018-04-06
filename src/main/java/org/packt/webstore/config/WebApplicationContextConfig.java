@@ -173,6 +173,7 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
 		 
 		 ProductValidator productValidator = new ProductValidator();
 		 productValidator.setSpringValidators(springValidators);
+		 
 		 return productValidator;
 		 
 	 }

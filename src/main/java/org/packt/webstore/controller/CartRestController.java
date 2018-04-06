@@ -57,7 +57,7 @@ public class CartRestController {
 	@PutMapping(value="/remove/{productId}")
 	@ResponseStatus(value=HttpStatus.OK)
 	public void removeItem(@PathVariable String productId, HttpSession session) {
-		this.cartService.addItem(session.getId(), productId);
+		this.cartService.removeItem(session.getId(), productId);
 	}
 	
 }

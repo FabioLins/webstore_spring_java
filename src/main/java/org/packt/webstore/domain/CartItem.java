@@ -19,6 +19,13 @@ public class CartItem implements Serializable {
 		super();
 		this.id = id;
 	}
+	
+	public CartItem(String id, Product product) {
+		super();
+		this.id = id;
+		this.product = product;
+		this.quantity = 1;
+	}
 
 	public String getId() {
 		return id;
@@ -30,6 +37,7 @@ public class CartItem implements Serializable {
 
 	public void setProduct(Product product) {
 		this.product = product;
+		this.quantity = 1;
 		this.updateTotalPrice();
 	}
 

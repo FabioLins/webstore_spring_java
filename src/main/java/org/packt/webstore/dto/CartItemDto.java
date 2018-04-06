@@ -11,6 +11,23 @@ public class CartItemDto implements Serializable {
 	private String productId;
 	
 	private int quantity;
+	
+	public CartItemDto() {
+		super();
+	}
+	
+	public CartItemDto(String id, String productId) {
+		super();
+		this.id = id;
+		this.productId = productId;
+	}
+
+	public CartItemDto(String id, String productId, int quantity) {
+		super();
+		this.id = id;
+		this.productId = productId;
+		this.quantity = quantity;
+	}
 
 	public String getId() {
 		return id;
